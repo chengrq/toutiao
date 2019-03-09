@@ -1,11 +1,17 @@
 package com.nowcoder.toutiao.controller;
 
 
+import com.nowcoder.toutiao.model.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 
@@ -27,8 +33,17 @@ public class IndexController {
     }
 
     @RequestMapping(value = {"/ftl"})
-    public String news(){
-        //model.addAttribute("value1", "vv1");
+    public String news(Model model){
+        model.addAttribute("value1","vv1");
+        //List<String> colors = Arrays.asList(new String[] {"RED","GREEN","BLUE"});
+        Map<String,String> map = new HashMap<String,String>();
+        for(int i = 0; i < 4; ++i){
+            map.put(String.valueOf(i),String.valueOf(i*i));
+        }
+
+        model.addAttribute("map",map);
+        model.addAttribute("user" , new User("Jim"));
+
         return "news";
     }
 }
