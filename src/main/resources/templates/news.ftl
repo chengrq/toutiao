@@ -27,6 +27,10 @@ macro : ${key} , ${ind}
     <@render_color key = m ind = m_index/>
 </#list>
 
+<#assign hello = "hello">
+<#assign hworld1 = "${hello} world">
+hworld1 : ${hworld1}
+
 </pre>
 </body>
 </html>
