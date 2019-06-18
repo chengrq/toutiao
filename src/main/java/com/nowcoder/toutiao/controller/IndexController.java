@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
 
-@Controller
+//@Controller
 
 
 public class IndexController {
